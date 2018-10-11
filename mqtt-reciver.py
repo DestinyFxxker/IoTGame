@@ -8,9 +8,6 @@ sys.stdin, sys.stdout, sys.stderr = stdi, stdo, stde
 
 
 
-HOST = "127.0.0.1"
-PORT = 1883
-
 def client_loop():
     client_id = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
     client = mqtt.Client(client_id)    
@@ -34,8 +31,8 @@ def on_message(client, userdata, msg):
     print(time.strftime('%Y%m%d%H%M%S',time.localtime(time.time())))
 
 if __name__ == '__main__':
+ 
+  HOST = "127.0.0.1"
+  PORT = 1883
+  client_loop()
 
-    
-
-    
-    client_loop()

@@ -3,6 +3,7 @@
 - [The Overview](#the-overview)
 - [Features](#features)
 - [Contact me](#contact-me)
+- [Information](#information)
 - [Issue report template](#issue-report-template)
 
 # The Overview
@@ -17,6 +18,10 @@
 - And reconfigures the message back to port 1883.
 - along with a recive script to detect if the message has returned to the mqtt broker.
 - Support python2.7 and 3.x+.
+
+# Information
+----------
+[HelTecDevice](http://www.heltec.cn/proudct_center/internet_of_things/)
 
 # Contact me
 ----------
