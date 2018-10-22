@@ -34,9 +34,28 @@ def on_message(client, userdata, msg):
     deviceName=message['deviceName']
     applicationName=message['applicationName']
     data=base64.b64decode(message['data'])
-    client.publish(deviceName+"data" , data , qos=0, retain=False)
+    list = [] 
+    for i in range(0,len(data),4):
+        stream=[data[i],data[i+1],data[i+2],data[i+3]]
+        value = struct.unpack('f', bytearray(stream))[0]
+        list.append(value)
+    
+    typecode=list[0]
+    
+    if typecode==1:
+        client.publish(deviceName+"_Temp", json.dumps({"devEUI":devEUI,"value":list[1]} ,sort_keys=True), qos=0, retain=False)
+        client.publish(deviceName+"_XValue", json.dumps({"devEUI":devEUI,"value":list[2]} ,sort_keys=True), qos=0, retain=False)
+        client.publish(deviceName+"_YValue", json.dumps({"devEUI":devEUI,"value":list[3]} ,sort_keys=True), qos=0, retain=False)
+        client.publish(deviceName+"_ZValue", json.dumps({"devEUI":devEUI,"value":list[4]} ,sort_keys=True), qos=0, retain=False)
+        client.publish(deviceName+"_Angle", json.dumps({"devEUI":devEUI,"value":list[4]} ,sort_keys=True), qos=0, retain=False)
+        client.publish(deviceName+"data" , data , qos=0, retain=False)
+    if typecode==2:
+        client.publish(deviceName+"_Temp", json.dumps({"devEUI":devEUI,"value":list[1]} ,sort_keys=True), qos=0, retain=False)
+        client.publish(deviceName+"_Humidity", json.dumps({"devEUI":devEUI,"value":list[2]} ,sort_keys=True), qos=0, retain=False)
 
+    text = '%s' % (list)   
     print(deviceName)
+    print(text)
     print(applicationName)
     print(data)
     print(time.strftime('%Y%m%d%H%M%S',time.localtime(time.time())))
