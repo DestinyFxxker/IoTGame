@@ -1,6 +1,4 @@
-1.хГ╨н╫╚ря╬╜иуп╢╣до╣мЁ╠ДЁи╬╣оЯнд╪Ч
 
-
-
-ох╟╡в╟ sudo dpkg -i
-тысцsystemctl start influxdb
+Е┘┬Е╝┴Хё┘ sudo dpkg -i
+Е├█Г■╗systemctl start influxdb
+Г■╗Д╩╔И│©Е╪─Ф≥╝И─ Г■╗Ф┬╥Ф²┐И≥░Д╦█Е╓÷Г └И≈╝И╒≤
