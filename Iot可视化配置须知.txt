@@ -1,0 +1,6 @@
+1.如何将已经烧写的系统变成镜像文件
+
+
+
+先安装 sudo dpkg -i
+再用systemctl start influxdb
