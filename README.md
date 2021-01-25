@@ -22,7 +22,6 @@
 # Information
 ----------
 ![](https://github.com/solotaker/IoTGame/blob/master/IOT.png)
-[HelTecDevice](http://www.heltec.cn/proudct_center/internet_of_things/)
 
 # Contact me
 ----------
